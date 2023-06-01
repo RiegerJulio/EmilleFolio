@@ -9,8 +9,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { createTheme } from '@mui/material';
+import { ThemeProvider } from '@emotion/react';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Sobre', 'Valores', 'Depoimentos', 'Contato'];
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#9e6c4b',
+    },
+  },
+});
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -24,6 +34,7 @@ function ResponsiveAppBar() {
   };
 
   return (
+    <ThemeProvider theme={theme}>
     <AppBar position="relative">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -36,14 +47,14 @@ function ResponsiveAppBar() {
               mr: 1,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontWeight: 500,
+              letterSpacing: '.2rem',
               color: 'inherit',
               textDecoration: 'none',
               pl: 3,
             }}
           >
-            LOGO
+            ES RECRUITMENT
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -92,13 +103,13 @@ function ResponsiveAppBar() {
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontWeight: 500,
+              // letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            ES RECRUITMENT
           </Typography>
           <Box sx={{ flexGrow: 1, pr: 3, display: { xs: 'none', md: 'flex', justifyContent: 'right' } }}>
             {pages.map((page) => (
@@ -114,6 +125,7 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    </ThemeProvider>
   );
 }
 export default ResponsiveAppBar;
