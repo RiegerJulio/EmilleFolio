@@ -4,7 +4,7 @@ import esBanner from '../assets/esBanner.png'
 const theme = createTheme({
   typography: {
     fontFamily: [
-      'Avenir,sans-serif',
+      'Avenir,sans-serif light',
       'Arial',
       'sans-serif',
       'Roboto',
@@ -37,7 +37,7 @@ function Home() {
                 alignItems="center"
               >
                 <Grid item xs={12}>
-                  <Typography gutterBottom align='center' fontFamily={theme.typography.fontFamily}>
+                  <Typography variant='h6' gutterBottom align='center' fontFamily={theme.typography.fontFamily}>
                     A E.S Recruitment oferece um serviço que fornece aos candidatos as ferramentas necessárias para conseguir o emprego dos seus sonhos.
                   </Typography>
                 </Grid>
