@@ -21,7 +21,7 @@ function Home() {
             justifyContent="center"
             alignItems="center"
           >
-            <Grid sm={4}>
+            <Grid sm={8}>
               <img
                 src={esBanner}
                 alt='ES Recruitment Banner'
