@@ -1,5 +1,16 @@
-import { Container, Grid, Typography, Button } from '@mui/material'
-// import * as React from 'react'
+import { Container, Grid, Typography, Button, createTheme } from '@mui/material'
+import esBanner from '../assets/esBanner.png'
+
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Avenir,sans-serif',
+      'Arial',
+      'sans-serif',
+      'Roboto',
+    ].join(','),
+  },
+});
 
 function Home() {
   return (
@@ -12,17 +23,13 @@ function Home() {
           >
             <Grid sm={4}>
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png"
-                alt=' about us'
+                src={esBanner}
+                alt='ES Recruitment Banner'
                 width="100%"
               />
             </Grid>
           </Grid>
           <Grid item xs={12} sm={7}>
-              <Typography variant="h2" component="h1" gutterBottom align='center'>
-                 Emille Santos Recruitment
-              </Typography>
-              <br />
               <Grid
                 container
                 direction="row"
@@ -30,7 +37,7 @@ function Home() {
                 alignItems="center"
               >
                 <Grid item xs={12}>
-                  <Typography variant="h5" component="h2" gutterBottom align='center'>
+                  <Typography gutterBottom align='center' fontFamily={theme.typography.fontFamily}>
                     A E.S Recruitment oferece um serviço que fornece aos candidatos as ferramentas necessárias para conseguir o emprego dos seus sonhos.
                   </Typography>
                 </Grid>
